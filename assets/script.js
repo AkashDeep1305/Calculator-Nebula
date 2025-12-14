@@ -43,6 +43,16 @@ function switchMode(mode) {
     renderButtons();
     renderModeToggle();
 
+    if (currentMode === "matrix") {
+        const Shistory = document.querySelector('.history');
+
+        Shistory.style.display = "none";
+        calc.style.width = "35rem";
+        buttons.style.left = "";
+        buttons.style.gap = "";
+        value.style.left = ""
+    }
+
     currentInput = '0';
     updateDisplay();
 }
@@ -1048,5 +1058,6 @@ document.addEventListener('keydown', (e) => {
     else if (key === 'Escape') { clearAll(); editingCell = null; clearAllM(); }
     else if (key === 'Backspace') backspace();
 });
+
 
 init();
